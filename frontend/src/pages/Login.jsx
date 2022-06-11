@@ -28,8 +28,8 @@ function Login() {
     }
     // redirect user when successfully logged in
     if (isSuccess || user) {
-      navigate('/')
       toast.success('Logged In Successful')
+      navigate('/')
     }
     dispatch(reset())
   }, [isError, isSuccess, user, message, dispatch, navigate])

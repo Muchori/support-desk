@@ -32,8 +32,8 @@ function Register() {
     }
     //redirect when successfully registred
     if (isSuccess || user) {
-      navigate('/')
       toast.success('Successfully Registered')
+      navigate('/')
     }
 
     dispatch(reset())
