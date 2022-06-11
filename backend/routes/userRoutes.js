@@ -1,15 +1,25 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser } = require('../controllers/userController')
+const {
+  registerUser,
+  loginUser,
+  getMe,
+} = require('../controllers/userController')
+const { protect } = require('../middleware/authMiddleware')
 
 /**
- * Register router
+ * Register route
  */
 router.post('/', registerUser)
 
 /**
- * Login router
+ * Login route
  */
 router.post('/login', loginUser)
+
+/**
+ * Me route
+ */
+router.get('/me', protect, getMe)
 
 module.exports = router
