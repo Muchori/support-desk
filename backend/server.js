@@ -6,6 +6,7 @@ const { errorHandler } = require('./middleware/errorMilddleware')
 const coonectDB = require('./config/db')
 
 const PORT = process.env.PORT || 8000
+
 /**
  * DB connection
  */
