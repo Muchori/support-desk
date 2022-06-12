@@ -19,7 +19,7 @@ const ticketSchema = mogoose.Schema(
     status: {
       type: String,
       required: true,
-      enum: ['new', 'open', 'close'],
+      enum: ['new', 'open', 'closed'],
       default: 'new',
     },
   },

@@ -8,9 +8,11 @@ const {
   deleteTicket,
   updateTicket,
 } = require('../controllers/ticketsController')
-
 const { protect } = require('../middleware/authMiddleware')
+const noteRouter = require('./noteRoutes')
 
+//re-route into note router
+router.use('/:ticketId/notes', noteRouter)
 router.route('/').get(protect, getTickets).post(protect, createTicket)
 router
   .route('/:id')
